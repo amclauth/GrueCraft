@@ -1,0 +1,435 @@
+{
+  "fontimage":{
+    "src":"lib/styles/tiles/ultima.png",
+    "charsWide":32,
+    "charsHigh":16,
+    "charWidth":32,
+    "charHeight":32,
+    "displayedCharWidth":16,
+    "displayedCharHeight":16,
+    "tilesOnly":true
+  },
+
+
+  "cssfile":"lib/styles/tiles/custom.css",
+
+
+  "colors":[],
+
+
+  "objects":{
+    "player":{
+      "id":"player",
+      "tile":284
+    }
+  },
+
+
+  "actions":{
+    "Go hunting":{
+      "requires":{
+        "resources":["meat"],
+        "loc":["Village","Castle","Outpost"]
+      },
+      "time":1,
+      "produces":{
+        "stores":{
+          "meat":3
+        }
+      }
+    },
+    "Go fishing":{
+      "requires":{
+        "resources":["fish"],
+        "loc":["Village","Castle","Outpost"]
+      },
+      "time":2,
+      "produces":{
+        "stores":{
+          "fish":2
+        }
+      }
+    },
+    "Gather branches":{
+      "requires":{
+        "resources":["wood"]
+      },
+      "time":1,
+      "produces":{
+        "inventory":{
+          "branches":5
+        }
+      }
+    },
+    "Gather wood":{
+      "requires":{
+        "resources":["wood"],
+        "loc":["Village","Castle","Outpost"]
+      },
+      "time":2,
+      "produces":{
+        "stores":{
+          "wood":3
+        }
+      }
+    },
+    "Build a shelter":{
+      "requires":{
+        "inventory":{
+          "branches":30
+        },
+        "loc":["Campsite"]
+      },
+      "time":5,
+      "produces":{
+        "base":{
+          "Rickety shelter":1
+        },
+        "loc":"Village"
+      }
+    },
+    "Upgrade a shelter":{
+      "requires":{
+        "base":{
+          "Rickety shelter":1
+        },
+        "stores":{
+          "wood":30
+        },
+        "loc":["Village","Castle","Outpost"]
+      },
+      "time":5,
+      "produces":{
+        "base":{
+          "Huts":1
+        }
+      }
+    },
+    "Build a campfire":{
+      "requires":{
+        "inventory":{
+          "branches":1
+        },
+        "loc":[]
+      },
+      "time":1,
+      "produces":{
+        "base":{
+          "A small fire":1
+        },
+        "loc":"Campsite"
+      }
+    },
+    "Build a welcoming fire":{
+      "requires":{
+        "base":{
+          "A small fire":1
+        },
+        "stores":{
+          "wood":10
+        },
+        "loc":["Village"]
+      },
+      "time":5,
+      "produces":{
+        "base":{
+          "A welcoming fire":1
+        }
+      }
+    },
+    "Build a hut":{
+      "requires":{
+        "stores":{
+          "wood":50
+        },
+        "loc":["Village","Castle","Outpost"]
+      },
+      "time":5,
+      "produces":{
+        "base":{
+          "Huts":1
+        }
+      }
+    },
+    "Construct a torch":{
+      "requires":{
+        "stores":{
+          "wood":1
+        },
+        "loc":["Village","Outpost","Castle"]
+      },
+      "time":1,
+      "produces":{
+        "stores":{
+          "torch":1
+        }
+      }
+    }
+  },
+
+
+  "effects":{
+    "attractor":{
+      "message":"Some wanderers were attracted to this location.",
+      "effect":[
+        {
+          "loc":"base",
+          "attribute":"population",
+          "amount":2.5,
+          "variance":0.5
+        }
+      ]
+    }
+  },
+
+
+  "items":{
+    "torch":{
+      "effects":{
+        "lightSource":0.75
+      }
+    },
+    "plank":{
+    },
+    "wooden sword":{
+    },
+    "coal":{ 
+    },
+    "A small fire":{
+      "max":1,
+      "effects":{
+        "lightSource":0.75,
+        "attractor":5
+      },
+      "noBurn":true
+    },
+    "A welcoming fire":{
+      "max":1,
+      "effects":{
+        "lightSource":2,
+        "attractor":25
+      },
+      "noBurn":true
+    },
+    "Rickety shelter":{
+      "max":1,
+      "effects":{
+        "housing":1
+      }
+    },
+    "Huts":{
+      "max":10,
+      "effects":{
+        "housing":4
+      }
+    }
+  },
+
+
+  "features":[
+    {
+      "tile":278,
+      "name":"Rift",
+      "desc":"A rift in the earth, guarded by ancient wards.",
+      "max_rooms":-1,
+      "light":0,
+      "interiorLight":0,
+      "weight":-1,
+      "treasure":1,
+      "canBuild":false
+    },
+    {
+      "tile":0,
+      "name":"Portal",
+      "desc":"A portal to another world.",
+      "max_rooms":-2,
+      "light":0.2,
+      "interiorLight":0,
+      "weight":-4,
+      "treasure":0,
+      "canBuild":false
+    },
+    {
+      "tile":23,
+      "name":"Cave",
+      "desc":"A dark cave entrance lies here.",
+      "max_rooms":10,
+      "light":0.3,
+      "interiorLight":0,
+      "weight":0.5,
+      "treasure":0.4,
+      "canBuild":false
+    },
+    {
+      "tile":16,
+      "name":"House",
+      "desc":"A house stands alone.",
+      "max_rooms":5,
+      "light":0.5,
+      "interiorLight":0.5,
+      "weight":1,
+      "treasure":0.1,
+      "canBuild":false
+    },
+    {
+      "tile":17,
+      "name":"Dungeon",
+      "desc":"Ornate doors lie closed against the earth.",
+      "max_rooms":-1,
+      "light":0.3,
+      "interiorLight":0,
+      "weight":0.05,
+      "treasure":1,
+      "canBuild":false
+    },
+    {
+      "tile":57,
+      "name":"Fortress",
+      "desc":"A massive dark fortress stands in front of you.",
+      "max_rooms":10,
+      "light":0.1,
+      "interiorLight":0.1,
+      "weight":0.05,
+      "treasure":0.8,
+      "canBuild":false
+    }
+  ],
+
+
+  "buildings":[
+    {
+      "tile":18,
+      "name":"Outpost",
+      "desc":"There is an outpost here, guarding the land.",
+      "light":3,
+      "maxpop":20,
+      "canBuild":true
+    },
+    {
+      "tile":179,
+      "name":"Campsite",
+      "desc":"A camp fire smolders invitingly.",
+      "light":1,
+      "maxpop":0,
+      "canBuild":true
+    },
+    {
+      "tile":19,
+      "name":"Village",
+      "desc":"A cozy village lies here.",
+      "light":2,
+      "maxpop":50,
+      "canBuild":true
+    },
+    {
+      "tile":62,
+      "name":"Castle",
+      "desc":"A massive castle, a bastion against the darkness.",
+      "light":4,
+      "maxpop":200,
+      "canBuild":true
+    },
+    {
+      "tile":77,
+      "name":"Road",
+      "desc":"A road crosses the terrain, making travel safer.",
+      "light":0.2,
+      "maxpop":0,
+      "canBuild":true
+    }
+  ],
+
+
+  "landTiles":[
+    {
+      "tile":1,
+      "name":"Ocean",
+      "desc":"The ocean waves roll gently.",
+      "light":1,
+      "weight":0,
+      "canBuild":false,
+      "resources":["fish"]
+    },
+    {
+      "tile":5,
+      "name":"Grassland",
+      "desc":"Grasslands stretch out before you with an occasional tree sprouting up.",
+      "light":1,
+      "weight":1,
+      "canBuild":true,
+      "resources":["meat","water","wood"]
+    },
+    {
+      "tile":13,
+      "name":"Mountain",
+      "desc":"Mountains rise up in the air, stretching off into the distance.",
+      "light":1,
+      "weight":1,
+      "canBuild":false,
+      "resources":["wood","stone","iron ore","coal","water"]
+    },
+    {
+      "tile":47,
+      "name":"Desert",
+      "desc":"Harsh desert terrain is all around you.",
+      "light":1,
+      "weight":1,
+      "canBuild":true,
+      "resources":["copper ore","iron ore"]
+    },
+    {
+      "tile":22,
+      "name":"Tundra",
+      "desc":"The frigid mountain tundra causes you to shiver, climbing up into the fresh mountain air.",
+      "light":1,
+      "weight":1,
+      "canBuild":true,
+      "resources":["meat","wood"]
+    },
+    {
+      "tile":504,
+      "name":"Streams",
+      "desc":"Fresh water streams flow through a light wooded area.",
+      "light":0.9,
+      "weight":1,
+      "canBuild":true,
+      "resources":["meat","wood","water","fish"]
+    },
+    {
+      "tile":10,
+      "name":"Forest",
+      "desc":"Trees grow so high, they almost block out the sun.",
+      "light":0.4,
+      "weight":1,
+      "canBuild":true,
+      "resources":["meat","wood","water"]
+    },
+    {
+      "tile":491,
+      "name":"Lake",
+      "desc":"A large freshwater lake dominates the landscape here.",
+      "light":1,
+      "weight":0.7,
+      "canBuild":false,
+      "resources":["fish","water"]
+    },
+    {
+      "tile":44,
+      "name":"Canyons",
+      "desc":"Canyons scar this landscape. Plenty of places to hide.",
+      "light":0.5,
+      "weight":1,
+      "canBuild":true,
+      "resources":["meat","iron ore","copper ore","coal","wood","water"]
+    },
+    {
+      "tile":6,
+      "name":"Swamp",
+      "desc":"Swamps smell bad.",
+      "light":0.4,
+      "weight":1,
+      "canBuild":false,
+      "resources":["meat","water","wood","fish"]
+    }
+  ]
+}

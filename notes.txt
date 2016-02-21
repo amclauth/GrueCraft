@@ -1,0 +1,75 @@
+https://en.wikipedia.org/wiki/A_Dark_Room
+https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy_(video_game)
+https://en.wikipedia.org/wiki/Zork
+https://en.wikipedia.org/wiki/Rogue_(video_game)
+https://en.wikipedia.org/wiki/Colossal_Cave_Adventure
+https://en.wikipedia.org/wiki/NetHack
+https://en.wikipedia.org/wiki/Dwarf_Fortress
+https://en.wikipedia.org/wiki/MUME
+
+Arglebargle, glop-glyf!?! 
+
+One might build a "fortress" where the point in the map leads to another map, but on this map, they can carve / build individual walls. They could do this underground as well as above ground. Could build whole towns this way. (Reminiscent of Dwarf Fortress, which I've never played)
+
+Similarly, in the dungeons, one must bring light or be eaten by the grue if the last torch goes out (at least /attacked/ by the grue)
+
+Make it "roguelike" in the combat arena. Turn based combat, for instance.
+
+Place a derivative of the "Amulet of Yendor" deep in some cavern on every map. This lets you "ascend" ... really it'll let you access portals to other maps. This is how you "win". Other maps have their danger levels increased by a factor for every map away from yours you traverse.
+
+Add easter eggs for uuddlrlrba(select)(start) and Xyzzy. Add some rooms that say things like "you are in a maze of twisty little passages, all alike" (Adventure)
+
+Different kinds of light sources would light different distances and impact whether ranged weapons have a better chance of hitting and how dangerous it is generally in the dark.
+
+Ranged weapons can be built, but enemies basically have a chance to still arrive undetected depending on their stealth. Otherwise, they might get only one or two shots at most before closing the distance.
+
+Check out the babelfish puzzle solution for the hitchiker's guide
+
+Dwarf Fortress can suggest some of the enemies seen.
+
+If you die completely, you can choose to start over as a new hero who can find the old hero's things, but wouldn't own the lands he previously owned (which would slowly fade to attrition). Maybe make "hundreds of years" pass so that things age away. Run a simulation on that world to see what might get destroyed. If a population lives, it becomes a new civilization that the hero will have to contend with. If it doesn't and it has permanent structures (fortresses, etc), those structures become ruins, and have dangers set to higher levels than normal for that location / terrain. (Dwarf Fortress)
+
+The random timer should affect every tile that has anything player-built on it. News will then travel slowly about the information maybe? So if you have an outpost and a dragon attacks it, they'll send news (we can assume a lone straggler sends the news if everyone dies, or we can have news come with caravans?). But your structures could fall apart if you don't check on them. Huts burn down and whatnot. As your settlements get big enough, maybe they can get some degree of self-sustainability. But a road may wash out, for example, and no one would know until someone comes through and checks.
+
+Speaking of roads, benefits of constructing roads: Travel is easier. Consume half (?) the provisions while traveling on a road. Also it's safer. It might halve the danger level? Maybe just make it act like it's in daylight? Roads will fall apart over time, though (maybe), so they have to be maintained every couple dozen years or build some traveling engineers to maintain them.
+
+The character starts each journey (life) at a random location on the map, and if /re-starting/, he starts at least N tiles away from any major structure that already exists. Danger levels are re-set, caves and buildings are re-set, etc. Maybe some treasure items stick around in those locations (or where the hero died last time), but if treasure is there, it ups the danger levels (danger is attracted to treasure!). Danger gets higher the further away you are from your starting location. Give a warning if the character starts traveling further than a semi-safe radius compared to what they're equipped for.
+
+Fog distance: We can fade out (or grey out) items in the distance. If you're walking along carrying a torch at night, maybe you can only see one tile distant. If it's daytime, you can maybe see six or seven tiles distant. Different tiles might affect this differently, based on light factor. If you're in a swamp, instead of two tiles, you can only see one tile (you can always see one tile away). Settlements with people, though, /emit/ light. If it's a small settlement, you might see them shining by themselves. A larger one might light up a few tiles, and a very bright one might light up several tiles. You can see these popping up in the distance as you travel around. If their light is dimished by attack, fire, plague, whatever, then you'll see it in real time.
+
+Names (not sure /any/ of these are allowed): GrueCraft, Adventure, GrueGame
+  - Depends what we want to emphasize. Not sure "craft" should be in there if we don't make it a heavy crafting game
+
+I'm not yet sure about "skinning". Sure, the CSS bits are fine, but the tiles and descriptions could get pretty big and the user shouldn't change the actual number of tiles on the fly. Might need a stripped down way of changing just the tiles and descriptions themselves without changing the game mechanics. Perhaps we put "games" in a folder, then in each game, that game has a "styles" folder. CSS can be moved on the fly, and the javascript might require a very specific JSON doc per game and we just iterate over them. Then, inside the game folders, we can keep other json files of data for the game itself, which php can load from the beginning.
+
+So far, interesting topics this has involved some research in: Bootstrap, jquery, blob detection, map generation (feature clustering), optimizing creation and drawing speeds, css and javascript data swapped on the fly, json, old games I used to play
+
+Work on dynamic sizing of the map itself. This is fine for a browser (to simply use 2r and r for width and height), but dropping to tablet or mobile, it'll get messed up quickly.
+
+I realized I could make the map "round" in the sense that all the edges could wrap to other edges fairly easily. The trick, though, would be meshing the features at those edges. That would require more cleaning. For now, then, the world is flat and you can fall off the edge if you sail over it!
+
+Add the font source and css source locations to the json file. Then, just load the json file. Those files have to be visible to the website anyway, so they have to be publicly hosted somewhere. Try some cross-domain queries for the json file. Make sure those work.
+
+Add a "look at map" feature that hides the map pane and the inventory pane and loads up a new map pane that takes up both spaces and is scrollable that shows all the area (with alpha of 1) that you've explored so far. Not available in fog of war mode.
+
+Send a message "home" (roguebits?) once every day cycle with an update with a user's score and other data. We might want to know how many ascentions, how many caves browsed, how many castles built, how many people live under you, how old you are, how much treasure you have, how many tiles you've explored, etc. Score might be a combination of all those things, but we can tally all the information for a grand total of everyone's information.
+
+Max daylight on sides 1-4 of the cube is maybe 0.5? Max daylight on side 5 is 0. Torches and villages and whatnot should still be able to reach a light of 1.
+
+The character will have actions he can take like "collect sticks" so he can then build a fire. The fire makes him safer, but requires feeding to stay lit. He can build a hut out of sticks as well (once he has enough) and that's when people might start to show up. Each hut can house, say, two people. But as people join, he can assign them to things like gathering wood (if there's wood nearby) and hunting (if there's "meat" nearby) and fishing (if there's "fish" nearby). He can build torches now to make traveling a little safer (and meat and water to travel with). Wood can be used to build houses (that house more people and more skilled workers), build rudimentary weapons (bow and arrow, wooden sword, etc)
+
+Skilled workers (that live in houses) can make slightly better weapons, light armor, carts to improve gathering rates, tools, etc. They can farm and ranch. You can now build roads to make travel easier (slightly safer). They can also build a barracks. There, you can set up your militia or army or whatever, relative to your skills (and money) to make your village safer.
+
+Once you have a barracks, you can build outposts instead of villages. Those can house troops that make the surrounding area lighter and safer by the amount and skill of troops stationed there. 
+
+You can also now build a castle, like a uber-baracks with a village in it.
+
+You can pay treasure to have skilled workers auto-work (instead of you clicking to make them work), but it costs treasure each time they auto do anything. But you can also auto sell surplus food / water / weapons / etc to caravans that come through (a random event), so you could set up an economy that's less efficient than you doing it yourself, but eliminates the button clicking in exchange for treasure.
+
+Random event firing will have consequences depending on what is on the square they fire. Fire possible random events for every occupied tile (villages, castles, outposts, current location, etc). For example, if the event is a fire, it won't matter if your village just has a single campfire in it. If the event is a person / family dropping by the lit square, they might mention that you need to gather enough branches to make a home if they were to stay if there are no huts yet or they might just move on if there's huts but no spare room. If it's wild animals, the danger will be mitigated by castle walls or by the outpost and by how many and what type of guards you have. Etc.
+
+Random event: Decay. If there is no one at a site, decay can destroy some percentage of the buildings / stores there.
+
+Make a tool that parses the json file for actions and items and makes a gvis file that has the items that can be built / found with lines that have a number for how many they require and a number on the item for the max of them (if there's a max). This should show us if we have a connected graph. Could also use a web tool to do this and make it a kind of "tech tree".
+
+Maybe to track usage of materials, they show up in whatever inventory they're in, but colored (orange?). They go under, for example, state->stores->used->item or maybe state->used->stores->item. This lets them still exist, but not be counted on for making more stuff.

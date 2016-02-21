@@ -1,0 +1,176 @@
+{
+  "objects":[
+    { 
+      "id":"player",
+      "tile":"#",
+      "class":"tilep"
+    },
+    { 
+      "id":"blank",
+      "tile":"&nbsp;",
+      "class":"tileb"
+    }
+  ],
+  "features":[
+    {
+      "tile":"C",
+      "name":"Cave",
+      "class":"feature",
+      "desc":"A dark cave entrance lies here.",
+      "max_rooms":10,
+      "light":0.3,
+      "interiorLight":0,
+      "weight":1,
+      "treasure":0.4
+    },
+    {
+      "tile":"H",
+      "name":"House",
+      "class":"feature",
+      "desc":"A house stands alone.",
+      "max_rooms":5,
+      "light":0.5,
+      "interiorLight":0.5,
+      "weight":1,
+      "treasure":0.1
+    },
+    {
+      "tile":"X",
+      "name":"Dungeon",
+      "class":"feature",
+      "desc":"Ornate doors lie closed against the earth.",
+      "max_rooms":-1,
+      "light":0.3,
+      "interiorLight":0,
+      "weight":0.2,
+      "treasure":1
+    },
+    {
+      "tile":"M",
+      "name":"Fortress",
+      "class":"feature",
+      "desc":"A massive dark fortress stands in front of you.",
+      "max_rooms":10,
+      "light":0.1,
+      "interiorLight":0.1,
+      "weight":0.2,
+      "treasure":0.8
+    }
+  ],
+  "buildings":[
+    {
+      "tile":"A",
+      "name":"Outpost",
+      "class":"building",
+      "desc":"There is an outpost here, guarding the land.",
+      "light":0.4,
+      "maxpop":20
+    },
+    {
+      "tile":"o",
+      "name":"Village",
+      "class":"building",
+      "description":"A cozy village lies here.",
+      "light":0.2,
+      "maxpop":50
+    },
+    {
+      "tile":"U",
+      "name":"Castle",
+      "class":"building",
+      "desc":"A massive castle, a bastion against the darkness.",
+      "light":0.8,
+      "maxpop":200
+    },
+    {
+      "tile":"=",
+      "name":"Road",
+      "class":"building",
+      "desc":"A road crosses the terrain, making travel safer.",
+      "light":0.3,
+      "maxpop":0
+    }
+  ],
+  "landTiles":[
+    {
+      "tile":"&nbsp;",
+      "name":"Ocean",
+      "class":"tile1",
+      "desc":"The ocean waves roll gently.",
+      "light":1,
+      "weight":0
+    },
+    {
+      "tile":"&nbsp;",
+      "name":"Grassland",
+      "class":"tile2",
+      "desc":"Grasslands stretch out before you with an occasional tree sprouting up.",
+      "light":1,
+      "weight":1
+    },
+    {
+      "tile":"&nbsp;",
+      "name":"Mountain",
+      "class":"tile3",
+      "desc":"Mountains rise up in the air, stretching off into the distance.",
+      "light":1,
+      "weight":1
+    },
+    {
+      "tile":"&nbsp;",
+      "name":"Desert",
+      "class":"tile4",
+      "desc":"Harsh desert terrain is all around you.",
+      "light":1,
+      "weight":1
+    },
+    {
+      "tile":"&nbsp;",
+      "name":"Tundra",
+      "class":"tile5",
+      "desc":"The frigid mountain tundra causes you to shiver, climbing up into the fresh mountain air.",
+      "light":1,
+      "weight":1
+    },
+    {
+      "tile":"&nbsp;",
+      "name":"Streams",
+      "class":"tile6",
+      "desc":"Fresh water streams flow through a light wooded area.",
+      "light":0.9,
+      "weight":1
+    },
+    {
+      "tile":"&nbsp;",
+      "name":"Forest",
+      "class":"tile7",
+      "desc":"Trees grow so high, they almost block out the sun.",
+      "light":0.4,
+      "weight":1
+    },
+    {
+      "tile":"&nbsp;",
+      "name":"Lake",
+      "class":"tile8",
+      "desc":"A large freshwater lake dominates the landscape here.",
+      "light":1,
+      "weight":0.7
+    },
+    {
+      "tile":"&nbsp;",
+      "name":"Canyons",
+      "class":"tile9",
+      "desc":"Canyons scar this landscape. Plenty of places to hide.",
+      "light":0.5,
+      "weight":1
+    },
+    {
+      "tile":"&nbsp;",
+      "name":"Swamp",
+      "class":"tile10",
+      "desc":"Swamps smell bad.",
+      "light":0.4,
+      "weight":1
+    }
+  ]
+}

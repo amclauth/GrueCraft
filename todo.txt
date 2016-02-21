@@ -1,0 +1,13 @@
+ - Add a "traversable" flag for land tiles? Have to re-check for all accessible areas in the blob detector if we decide to do things like make lakes / mountains non traversable, but this is an easy addition
+ - Add a "bonus" for various items in the data, so a road can have better travel, for example
+
+
+Bugs
+ - It is sometimes possible to get an undefined error from the lightMap? (browsers that clear cache quickly or something?)
+ - Some browsers (linux chromium?) aren't storing the cached values correctly?
+ - On small screen size, the map ends up inside the inventory
+
+Graph
+ - Add two letter index to begginning of products: "In: Branches, St: meat"
+ - Color code actions with a circle node. Outer circle is the location they become (loc tag in produces) inner circle is the color they can be completed from (loc tag in requires)
+ - Try an invisible set of nodes for each location (maybe not even invisible, but with invisible lines?) Attach the nodes for what they become and what they require to it. To avoid being too tight, just use require unless they have a produces loc node.

@@ -1,0 +1,115 @@
+body { padding-bottom: 2em }
+footer { background-color: #222 }
+footer ul { list-style-type: none }
+footer div ul li ul li
+{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.top-buffer { margin-top: 20px; }
+.map { 
+  font-family: monospace;
+  font-size: 1;
+  line-height: 1.15em; 
+  text-align: center;
+  padding-bottom: 5em;
+}
+.map .span {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.large-map {
+  overflow-y:scroll;
+  overflow-x:scroll;
+  white-space: nowrap;
+}
+.logroll {
+  margin-bottom: 1em;
+}
+.btn-action {
+  margin: 0 0 5px 0;
+  width: 50%;
+  height: 3em;
+}
+.btn-action-progress {
+  position:absolute;
+  padding-left: 20px;
+  vertical-align: center;
+  line-height: 3em;
+  right: 0;
+  left: 0;
+}
+.btn-action .progress-bar {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.btn-action-href {
+  color: inherit;
+}
+
+.title_box {
+  border: #ddd 1px solid;
+  margin-bottom: 2em;
+}
+.title_box .tbtitle
+{
+  position: relative;
+  top: -0.7em;
+  margin-left: 2em;
+  padding-right: 5px;
+  padding-left: 10px;
+  display: inline;
+  background-color: #222;
+}
+.title_box .tbcontent
+{
+  padding-left: 5px;
+  padding-bottom: 5px;
+  margin-top: -0.5em;
+  font-family: monospace;
+  font-size: .9em;
+  line-height: 1em;
+}
+.title_box .tbcontent .table a
+{
+  color: inherit;
+  text-decoration: none;
+}
+.title_box .tbcontent .table a:hover
+{
+  color: inherit;
+  text-decoration: none;
+  font-style: italic;
+}
+.title_box .tbcontent .table
+{
+  display:table;
+  margin: 0;
+}
+.title_box .tbcontent .tr
+{
+  display: table-row;
+}
+.title_box .tbcontent .td
+{
+  display: table-cell;
+  padding-right: 4px;
+}
+.title_box .tbcontent .table a .td
+{
+  padding-right: 9px; /* hack to move a td's back to where they should be */
+}
+
+#adbanner {
+  width: 100%;
+  height: 90px;
+  background: #000;
+  margin-top:8px;
+  text-align:center;
+}
+div.spoiler {
+  display:none;
+}
