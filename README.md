@@ -7,4 +7,5 @@ So I came up with this idea
 
 I want the game to be a browser game that is reminiscent of games like Zork and the Hitchiker's Guide to the Galaxy that I saw as a kid ages ages ago, but with modern touches and updates that make it easily accessible.
 
-... This will be a long, drawn out project, updated as I get time / interest.
+UPDATE:
+I initially built this to explore some Javascript again, but quickly found I needed more frameworks involved (unit testing, communication, maybe ES6 objects), so I got something that's only useable at the most basic level out of it and have paused to pursue other projects until the inspiration for this game strikes again.
